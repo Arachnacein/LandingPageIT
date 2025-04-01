@@ -5,10 +5,11 @@ import { VideoComponent } from './components/video/video.component';
 import { TechstackComponent } from './components/techstack/techstack.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { WorkComponent } from './components/work/work.component';
+import { ProjectsComponent } from "./components/projects/projects.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, HomeComponent, VideoComponent, TechstackComponent, StudiesComponent, WorkComponent],
+  imports: [NavbarComponent, HomeComponent, VideoComponent, TechstackComponent, StudiesComponent, WorkComponent, ProjectsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
