@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.studies {
+    max-width: 1500px;
+    padding: 40px;
+    margin: auto;
+    margin-top:40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .school {
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 5rem;
+    
+            h2 {
+            font-size: 3.5rem;
+            color: #C49AD6;
+            }
+        }
+
+    .content {
+        
+        
+        .highlight {
+            color: goldenrod;
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.3em;
+            padding: 2%;
+            text-align: justify;
+            color: rgb(173, 83, 133);
+            text-indent: 2em;
+        }
+
+    }
+}

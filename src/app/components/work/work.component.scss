@@ -1,0 +1,76 @@
+.work {
+    max-width: 1500px;
+    padding: 40px;
+    margin: auto;
+    margin-top: 3%;
+    flex-wrap: wrap;
+    padding: 2rem;
+    
+    .content {
+    
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            
+            h2 {
+                font-size: 3.5rem;
+                color: #C49AD6;
+            }
+            h3 {
+                font-size: 2rem;
+                color: #C49AD6;
+            }
+        }
+
+        .eastsoft > .eastsoftcontent {
+            margin-top: 10%;           
+
+            .logo {
+                text-align: center;
+                .imgeeastsoft {
+                    max-width: 500px;
+                    max-height: 500px;
+                }
+            }
+        }
+
+        .tygodnik > .tygodnikcontent {
+            margin-top: 10%;           
+
+            .logo {     
+                text-align: center;
+                .imagetygodnik {
+                    max-width: 500px;
+                    max-height: 500px;
+                }
+            }
+            .text {
+
+            }
+        }
+
+        .tutoring > .tutoringcontent {
+            margin-top: 10%;           
+
+            .text {
+                
+            }
+
+        }
+    }
+
+    .text {
+        p, ul {
+            line-height: 1.6;
+            font-size: 1.3em;
+            padding: 1%;
+            text-align: justify;
+            color: rgb(173, 83, 133);
+            text-indent: 2em;
+        }
+        .highlight {
+            color: goldenrod;
+            font-weight: bold;
+        }
+    }
+}
