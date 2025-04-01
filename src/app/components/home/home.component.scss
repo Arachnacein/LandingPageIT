@@ -25,10 +25,20 @@
 
     p {
       line-height: 1.6;
+      text-indent: 2.5rem;
       font-size: 1.3em;
       padding: 2%;
       text-align: justify;
       color: rgb(173, 83, 133);
+    }
+    
+    .highlight {
+      color: goldenrod;
+      font-weight: bold;
+    }
+
+    .little {
+      font-size: small;
     }
   }
   
@@ -142,8 +152,10 @@
     }
 
     button:hover {
-      background-color: #834d86;
-      color: #2c0835;
+      transition: text-shadow 0.3s ease-in-out;
+      transition-delay: 0.1s;
+      box-shadow: 0 4px 38px rgba(255, 182, 193, 0.7);
+      border-radius: 20px;
     }
   }
 
