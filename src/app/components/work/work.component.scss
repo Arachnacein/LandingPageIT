@@ -81,15 +81,7 @@
       &.reveal {
         transform: rotate(0deg) translateX(0);
       }
-      @media (max-width: 600px) 
-      {
-        transform: none !important;
-        transition: none !important;
 
-        &.reveal {
-          transform: none;
-        }
-      }
     }
     .eastsoftcontent, .tutoringcontent {
       transform: translateX(-650px) translateY(100px);
@@ -149,6 +141,23 @@
     }
   }
 }
+
+@media (max-width: 1050px) {
+  .work .content {
+    .eastsoftcontent,
+    .tutoringcontent,
+    .tygodnikcontent,
+    .hospitalcontent {
+      transform: none !important;
+      transition: none !important;
+
+      &.reveal {
+        transform: none !important;
+      }
+    }
+  }
+}
+
 
 @keyframes pulsar {
   0% { opacity: 1; }

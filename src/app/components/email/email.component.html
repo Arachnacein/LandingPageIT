@@ -1,0 +1,26 @@
+<div class="contact-form-section">
+    <div class="contact-info">
+        <h2>Chcesz skontaktować się ze mną?</h2>
+        <p>Śmiało, napisz do mnie – odpowiem jak najszybciej!</p>
+      </div>
+
+    <form #formRef (ngSubmit)="sendEmail()" class="contact-form">
+      <input type="email" name="reply_to" [(ngModel)]="formData.reply_to" required placeholder="Twój e-mail"
+        [class.invalid]="formData.reply_to.trim().length === 0" />
+  
+      <input type="text" name="subject" [(ngModel)]="formData.subject" required placeholder="Temat"
+        [class.invalid]="subjectTooShort" />
+      <div class="error-message" *ngIf="subjectTooShort">Temat musi mieć więcej niż 5 znaków</div>
+  
+      <textarea name="message" [(ngModel)]="formData.message" required placeholder="Treść wiadomości"
+        [class.invalid]="messageTooShort"></textarea>
+      <div class="error-message" *ngIf="messageTooShort">Wiadomość musi mieć minimum 20 znaków</div>
+  
+      <button type="submit" [disabled]="!isFormValid || isSending">
+        {{ isSending ? 'Wysyłanie...' : 'Wyślij' }}
+      </button>
+    </form>
+  
+    <div *ngIf="messageSent" class="confirmation">Wiadomość została wysłana ✅</div>
+  </div>
+  
