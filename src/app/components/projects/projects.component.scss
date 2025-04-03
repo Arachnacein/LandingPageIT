@@ -12,7 +12,31 @@
         h2 {
             font-size: 3.5rem;
             color: #C49AD6;
-        }
+            position: relative;
+            display: inline-block; 
+            padding-bottom: 0.5rem;
+            color: #C49AD6;
+            font-size: 3.5rem;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                text-align: center;
+                background: linear-gradient(
+                    to right,
+                    transparent 0%,
+                    #C49AD6 70%,
+                    transparent 100%
+                    );
+                filter: blur(1px);
+                pointer-events: none;
+                animation: pulsar 1.2s infinite;
+              }
+          }
     }
 
     .app {
@@ -47,6 +71,12 @@
             }
         }
         .techstack {
+            text-align: center;
+            img {
+                height: 82px;
+                padding: 5px;
+                margin: 10px;
+            }
         }
         
     }
@@ -69,3 +99,36 @@
         font-weight: bold;
     }
 }
+@keyframes pulsar {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    25% {
+      opacity: .79;
+    }
+    30% {
+      opacity: 0.4;
+    }
+    35% {
+      opacity: 0.88;
+    }
+    55% {
+      opacity: 0.2;
+    }
+    60% {
+      opacity: .9;
+    }
+    70% {
+      opacity: 0.3;
+    }
+    75% {
+      opacity: .79;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

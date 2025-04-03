@@ -7,6 +7,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const reveals = document.querySelectorAll(".reveal");
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.4
+        }
+      );
+  
+      reveals.forEach(el => observer.observe(el));
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const resultBox = document.getElementById('contact-result');
+      const toast = document.getElementById('toast');
+      const iconCircles = document.querySelectorAll('.icon-circle');
+
+      const values = {
+        phone: '501 839 501',
+        email: 'jakub26800@gmail.com'
+      };
+
+      iconCircles.forEach(circle => {
+        const type = circle.getAttribute('data-type');
+
+        circle.addEventListener('click', () => {
+          if (type === 'phone' || type === 'email') {
+            const text = values[type];
+            resultBox.textContent = text;
+            resultBox.classList.add('show');
+
+            navigator.clipboard.writeText(text).then(() => {
+              showToast();
+            });
+          }
+        });
+      });
+
+      document.querySelectorAll('.icon-circle:not([data-type])').forEach(icon => {
+        const onclick = icon.getAttribute('onclick');
+        if (onclick) {
+          icon.addEventListener('click', () => {
+            const match = onclick.match(/'(.*?)'/);
+            if (match && match[1]) {
+              window.open(match[1], '_blank');
+            }
+          });
+        }
+      });
+
+      function showToast() {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const studies = document.querySelector('.studies');
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              studies.classList.add('reveal');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(studies);
+    });
+  </script>
+
+
+
+  
 </head>
 <body>
   <app-root></app-root>

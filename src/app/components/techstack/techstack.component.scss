@@ -8,11 +8,35 @@
 
   .header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;      
     
       h2 {
         font-size: 3.5rem;
         color: #C49AD6;
+        position: relative;
+        display: inline-block; 
+        padding-bottom: 0.5rem;
+        color: #C49AD6;
+        font-size: 3.5rem;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                #C49AD6 70%,
+                transparent 100%
+                );
+            filter: blur(1px);
+            pointer-events: none;
+            animation: pulsar 1.2s infinite;
+          }
       }
   }
 
@@ -34,15 +58,12 @@
       .tests, .patterns, .cicd, .ai, .other 
       {
           background: linear-gradient(to bottom right, #38174e 90%, #c66ce9 100%);
-          border-radius: 8px;
           padding: 1rem;
           color: #fff;
           transition: all 0.45s ease-in-out;
 
           &:hover,
           &:focus {
-              box-shadow: 0 0 5px rgba(255, 182, 193, 0.7);
-              
             h3 {
                   transition: text-shadow 0.3s ease-in-out;
                   transition-delay: 0.1s;
@@ -108,5 +129,49 @@
   }
   .skills div:hover p:nth-child(9) {
     animation-delay: 0.8s;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes pulsar {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    25% {
+      opacity: .79;
+    }
+    30% {
+      opacity: 0.4;
+    }
+    35% {
+      opacity: 0.88;
+    }
+    55% {
+      opacity: 0.2;
+    }
+    60% {
+      opacity: .9;
+    }
+    70% {
+      opacity: 0.3;
+    }
+    75% {
+      opacity: .79;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   

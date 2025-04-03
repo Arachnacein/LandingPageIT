@@ -1,6 +1,6 @@
 <div class="home" id="home">
     <div class="aboutme">
-        <h2>Jakub Łuka<span class="little">(mgr inż.)</span></h2>
+        <h2>Programista .NET</h2>
         <div class="picture">
             <img src="assets/home/profile.png" alt="It's me" >
         </div>
@@ -14,47 +14,38 @@
         <p>
            Od 2020 roku rozwijam się w świecie IT – od studiów inżynierskich i magisterskich po praktyki 
           w software housie oraz własne projekty. Biegle używam takich technologii jak: 
-          C#, Docker, WebAPI, REST, testy oprogramowania i wiele więcej.
+          C#, Docker, Web API, Software tests i wiele więcej.
         </p>
         <p>
            Fascynują mnie technologie chmurowe i architektury mikroserwisowe, a w pracy stawiam 
           na <span class="highlight">dobrą komunikację</span> w zespole, solidność i otwartość na rozwój. Uwielbiam poznawać 
-          nowe wzorce, narzędzia i dobre praktyki.
-        </p>
-        <p>
-          🚀 Szukam pierwszej zawodowej przygody, która pozwoli mi się rozwijać, dzielić energią i 
-          tworzyć realne, przydatne rozwiązania. Chcesz wiedzieć więcej? Scrolluj dalej!
+          nowe wzorce, narzędzia i dobre praktyki. Chcesz wiedzieć więcej? Scrolluj dalej!
         </p>
     </div>
     <div class="lower">
         <div class="contact">
-            <div class="row">
-                <div class="item">
-                    <img src="assets/home/phone.png">
-                    <p>501 839 501</p>
-                </div>
-                <div class="item">
-                    <img src="assets/home/mail.png">
-                    <p>jakub26800&#64;gmail.com</p>
-                </div>
+            <div class="contact-icons">
+              <div class="icon-circle" data-type="phone">
+                <img src="assets/home/phone.png" alt="Telefon">
+              </div>
+              <div class="icon-circle" data-type="email">
+                <img src="assets/home/mail.png" alt="E-mail">
+              </div>     
+              <div class="icon-circle" onclick="window.open('https://github.com/Arachnacein/App', '_blank')">
+                <img src="assets/home/github.png" alt="GitHub">
+              </div>
+              <div class="icon-circle" onclick="window.open('https://www.facebook.com/profile.php?id=100009543060362&locale=pl_PL', '_blank')">
+                <img src="assets/home/facebook.png" alt="GitHub">
+              </div>
+              <div class="icon-circle" onclick="window.open('https://www.linkedin.com/in/jakubluka/', '_blank')">
+                <img src="assets/home/linkedin.png" alt="LinkedIn">
+              </div>
+              <div class="icon-circle" onclick="window.open('https://drive.google.com/file/d/1pfRVsXeGPOGuRe1CJVOfWuQe7VUii4BZ/view?usp=sharing/preview', '_blank')">
+                <img src="assets/home/cv.png" alt="CV">
+              </div>
             </div>
-            <div class="row">
-                <div class="item">
-                    <img src="assets/home/github.png">
-                    <a href="https://github.com/Arachnacein/App">github.com/Arachnacein/App</a>
-                </div>
-                <div class="item">
-                    <img src="assets/home/linkedin.png">
-                    <a href="https://www.linkedin.com/in/jakubluka/">linkedin.com/in/jakubluka/</a>
-                </div>
-            </div>
-        </div>
-        <div class="download">
-            <button> 
-                <p>Pobierz CV</p>
-                <img src="assets/home/download.png">
-            </button>
-        </div>
+            <div class="contact-result" id="contact-result"></div>
+            <div class="toast" id="toast">Skopiowano do schowka 📋</div>
+          </div>
     </div>
-
 </div>
