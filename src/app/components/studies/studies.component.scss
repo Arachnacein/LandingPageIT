@@ -1,132 +1,125 @@
 .studies {
-    max-width: 1500px;
-    margin: auto;
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    transform: rotate(-25deg) translateX(-650px) translateY(300px);
-    transition: transform 1s ease-in-out;
-    transform-origin: top left;
-    position: relative;
-    overflow: hidden;
-    padding: 3rem 2rem;
-    z-index: 1;
-  
-    border-radius: 30px;
-  
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-  
-      background: linear-gradient(
-        to right top,
-        transparent 60%,
-        rgba(153, 102, 255, 0.1) 100%
-      );
-    }
-  
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: rotate(-25deg) translateX(-650px) translateY(300px);
+  transition: transform 1s ease-in-out;
+  transform-origin: top left;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 2rem;
+  z-index: 1;
+  border-radius: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(
+      to right top,
+      transparent 60%,
+      rgba(218, 165, 32, 0.07) 100%
+    );
+  }
+
+  &.reveal {
+    transform: rotate(0deg) translateX(0);
+  }
+
+  @media (max-width: 600px) {
+    transform: none !important;
+    transition: none !important;
+
     &.reveal {
-      transform: rotate(0deg) translateX(0);
+      transform: none;
     }
-  
-    @media(max-width: 600px) {
-      transform: none !important;
-      transition: none !important;
-  
-      &.reveal {
-        transform: none;
-      }
-    }
-  
-    .school {
-      text-align: center;
-      margin-bottom: 2rem;
-  
-      h2 {
-        font-size: 3.5rem;
-        color: #C49AD6;
-        position: relative;
-        display: inline-block; 
-        padding-bottom: 0.5rem;
-        color: #C49AD6;
-        font-size: 3.5rem;
-        
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 2px;
-            width: 100%;
-            text-align: center;
-            background: linear-gradient(
-                to right,
-                transparent 0%,
-                #C49AD6 70%,
-                transparent 100%
-                );
-            filter: blur(1px);
-            pointer-events: none;
-            animation: pulsar 1.2s infinite;
-          }
-      }
-    }
-  
-    .content {
-      .highlight {
-        color: goldenrod;
-        font-weight: bold;
-      }
-  
-      p {
-        line-height: 1.6;
-        font-size: 1.3em;
-        padding: 2%;
-        text-align: justify;
-        color: rgb(173, 83, 133);
-        text-indent: 2em;
+  }
+
+  .school {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 3.5rem;
+      color: goldenrod;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          goldenrod 70%,
+          transparent 100%
+        );
+        filter: blur(1px);
+        pointer-events: none;
+        animation: pulsar 2.5s infinite ease-in-out;
       }
     }
   }
 
+  .content {
+    .highlight {
+      color: goldenrod;
+      font-weight: bold;
+    }
 
-  @keyframes pulsar {
-    0% {
-      opacity: 1;
-    }
-    20% {
-      opacity: 0.4;
-    }
-    25% {
-      opacity: .79;
-    }
-    30% {
-      opacity: 0.4;
-    }
-    35% {
-      opacity: 0.88;
-    }
-    55% {
-      opacity: 0.2;
-    }
-    60% {
-      opacity: .9;
-    }
-    70% {
-      opacity: 0.3;
-    }
-    75% {
-      opacity: .79;
-    }
-    100% {
-      opacity: 1;
+    p {
+      line-height: 1.6;
+      font-size: 1.3em;
+      padding: 1%;
+      text-align: justify;
+      color: #e0e0e0;
+      text-indent: 2em;
     }
   }
-  
+}
+
+@keyframes pulsar {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  25% {
+    opacity: 0.79;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.88;
+  }
+  55% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.79;
+  }
+  100% {
+    opacity: 1;
+  }
+}

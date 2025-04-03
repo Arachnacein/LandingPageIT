@@ -1,133 +1,164 @@
 .work {
-    max-width: 1500px;
-    padding: 40px;
-    margin: auto;
-    margin-top: 3%;
-    flex-wrap: wrap;
-    padding: 2rem;
-    
-    .content {
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-            
-            h2 {
-                font-size: 3.5rem;
-                color: #C49AD6;
-                position: relative;
-                display: inline-block; 
-                padding-bottom: 0.5rem;
-                color: #C49AD6;
-                font-size: 3.5rem;
-                
-                &::after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    height: 2px;
-                    width: 100%;
-                    text-align: center;
-                    background: linear-gradient(
-                        to right,
-                        transparent 0%,
-                        #C49AD6 70%,
-                        transparent 100%
-                        );
-                    filter: blur(1px);
-                    pointer-events: none;
-                    animation: pulsar 2.5s infinite;
-                  }
-              }
-            h3 {
-                font-size: 2rem;
-                color: #C49AD6;
-            }
-        }
+  max-width: 1500px;
+  padding: 2rem;
+  margin: auto;
+  margin-top: 3%;
+  flex-wrap: wrap;
 
-        .eastsoft > .eastsoftcontent {
-            margin-top: 10%;           
-            .logo {
-                text-align: center;
-                .imgeeastsoft {
-                    max-width: 500px;
-                    max-height: 500px;
-                }
-            }
-        }
+  .content {
+    .header {
+      text-align: center;
+      margin-bottom: 3%;
 
-        .tygodnik > .tygodnikcontent {
-            margin-top: 10%;           
-            .logo {     
-                text-align: center;
-                .imagetygodnik {
-                    max-width: 500px;
-                    max-height: 500px;
-                }
-            }
-        }
+      h2 {
+        font-size: 3.5rem;
+        color: goldenrod;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
 
-        .tutoring > .tutoringcontent {
-            margin-top: 10%;           
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          text-align: center;
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            goldenrod 70%,
+            transparent 100%
+          );
+          filter: blur(1px);
+          pointer-events: none;
+          animation: pulsar 2.5s infinite ease-in-out;
         }
+      }
 
-        .hospital > .hospitalcontent {
-            .logo {
-                text-align: center;
-                img {
-                    max-width: 500px;
-                    max-height: 500px;
-                }
-            }
-        }
+      h3 {
+        font-size: 2rem;
+        color: #e0e0e0;
+        margin-top: 1rem;
+        text-shadow: 0 0 5px rgba(218, 165, 32, 0.15);
+      }
     }
 
-    .text {
-        p, ul {
-            line-height: 1.6;
-            font-size: 1.3em;
-            padding: 1%;
-            text-align: justify;
-            color: rgb(173, 83, 133);
-            text-indent: 2em;
+    .eastsoft > .eastsoftcontent,
+    .tygodnik > .tygodnikcontent,
+    .tutoring > .tutoringcontent,
+    .hospital > .hospitalcontent {
+        margin-top: 4%;
+        max-width: 1500px;
+        margin: auto;
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transition: transform 0.84s ease-in-out;
+        transform-origin: top left;
+        position: relative;
+        overflow: hidden;
+        padding: 3rem 2rem;
+        z-index: 1;
+        border-radius: 30px;
+
+      .logo {
+        text-align: center;
+
+        img,
+        .imgeeastsoft,
+        .imagetygodnik,
+        .imagehospital {
+          max-width: 400px;
+          max-height: 400px;
+          filter: brightness(0.9) contrast(1.1);
+          padding: 1rem;
         }
-        .highlight {
-            color: goldenrod;
-            font-weight: bold;
+      }
+
+      &.reveal {
+        transform: rotate(0deg) translateX(0);
+      }
+      @media (max-width: 600px) 
+      {
+        transform: none !important;
+        transition: none !important;
+
+        &.reveal {
+          transform: none;
         }
+      }
     }
+    .eastsoftcontent, .tutoringcontent {
+      transform: translateX(-650px) translateY(100px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: linear-gradient(
+          to right top,
+          transparent 60%,
+          rgba(218, 165, 32, 0.07) 100%
+        );
+      }
+    }
+
+    .tygodnikcontent, .hospitalcontent {
+      transform: translateX(650px) translateY(100px);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: linear-gradient(
+          to left top,
+          transparent 60%,
+          rgba(218, 165, 32, 0.07) 100%
+        );
+      }
+    }
+
+  }
+
+  .text {
+    p,
+    ul {
+      line-height: 1.6;
+      font-size: 1.3em;
+      padding: 1%;
+      text-align: justify;
+      color: #e0e0e0;
+      text-indent: 2em;
+    }
+
+    .highlight {
+      color: goldenrod;
+      font-weight: bold;
+    }
+  }
 }
 
 @keyframes pulsar {
-    0% {
-      opacity: 1;
-    }
-    20% {
-      opacity: 0.4;
-    }
-    25% {
-      opacity: .79;
-    }
-    30% {
-      opacity: 0.4;
-    }
-    35% {
-      opacity: 0.88;
-    }
-    55% {
-      opacity: 0.2;
-    }
-    60% {
-      opacity: .9;
-    }
-    70% {
-      opacity: 0.3;
-    }
-    75% {
-      opacity: .79;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
+  0% { opacity: 1; }
+  20% { opacity: 0.4; }
+  25% { opacity: 0.79; }
+  30% { opacity: 0.4; }
+  35% { opacity: 0.88; }
+  55% { opacity: 0.2; }
+  60% { opacity: 0.9; }
+  70% { opacity: 0.3; }
+  75% { opacity: 0.79; }
+  100% { opacity: 1; }
+}
