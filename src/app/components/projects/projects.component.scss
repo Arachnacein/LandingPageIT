@@ -2,6 +2,70 @@
     max-width: 1500px;
     padding: 40px;
     margin: auto;
-    display: flex;
+    margin-top: 3%;
     flex-wrap: wrap;
+    padding: 2rem;
+
+    .header {
+        text-align: center;
+        margin-bottom: 2rem;
+        h2 {
+            font-size: 3.5rem;
+            color: #C49AD6;
+        }
+    }
+
+    .app {
+
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+          
+            img, i {
+              height: 40px;
+              transition: transform 0.3s;
+            }
+          
+            img:hover, i:hover {
+              transform: scale(1.6);
+            }
+          }
+          
+        .shortdesc, .fulldesc {
+            p {
+                line-height: 1.6;
+                font-size: 1.3em;
+                padding: 2%;
+                text-align: justify;
+                color: rgb(173, 83, 133);
+                text-indent: 2em;
+            }
+        }
+        .techstack {
+        }
+        
+    }
+    .engineering {
+
+    }
+    .master {
+
+    }
+    h3 {
+        line-height: 1.6;
+        font-size: 2rem;
+        padding: 2%;
+        text-align: justify;
+        color: rgb(173, 83, 133);
+        text-align: center;
+    }
+    .highlight {
+        color: goldenrod;
+        font-weight: bold;
+    }
 }

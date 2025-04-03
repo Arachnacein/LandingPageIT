@@ -1,3 +1,69 @@
 <div class="projects">
+    <div class="header">
+        <h2>Projekty, które zrealizowałem</h2>
+    </div>
+    <div class="app">
+        <div class="title">
+            <h3>Aplikacja do zarządzania budżetem domowym</h3>
+        </div>
+        <div class="shortdesc">
+            <p>
+                Pomysł na aplikację budżetową narodził się z mojej potrzeby 
+                lepszegozarządzania finansami. Początkowo prowadziłem zapiski ręcznie, później przeniosłem się do Excela, ale szybko uznałem, że nie spełnia on moich oczekiwań. Chciałem czegoś bardziej przejrzystego, intuicyjnego i skrojonego pod moje potrzeby — dlatego postanowiłem stworzyć własną aplikację, która automatyzuje obliczenia i kategoryzuje wydatki według moich zasad.
+            </p>
+        </div>
+        <div class="carousel">
+            <app-carousel [slides]="projekty" [interval]="5000"></app-carousel>
+        </div>
+        <div class="fulldesc">
+            <h3>Jak to działa?</h3>
+            <p>
+            W zakładce Budżet możesz śledzić swoje miesięczne wydatki. Najlepiej zacząć od dodania przychodu – może to być wypłata, wygrana czy nawet znalezione pieniądze. Przy pierwszym przychodzie w danym miesiącu system zaproponuje wybór schematu podziału dochodu – możesz wybrać gotowy lub stworzyć własny. Aplikacja automatycznie rozdzieli środki między kategorie i zaktualizuje dane w tabelach. Możesz następnie dodawać transakcje ręcznie, a w razie potrzeby przeciągnąć je między kategoriami. Po najechaniu kursorem zobaczysz datę i opis, a kliknięcie pozwoli edytować lub usunąć transakcję.
+            </p>
+            <p>
+            Dodatkowo aplikacja obsługuje transakcje cykliczne – przychody lub wydatki, które powtarzają się automatycznie. Można ustalić zakres dat i częstotliwość. Niezatwierdzone transakcje mają biały obrys i nie są liczone w statystykach, natomiast zatwierdzone zmieniają obrys na zielony i są wliczane do podsumowań.
+            </p>
+            <h3>Architektura aplikacji</h3>
+            <p>
+            Projekt oparty jest o Clean Architecture, która oddziela logikę biznesową od warstwy danych i interfejsu użytkownika. Całość podzielona jest na warstwy, które komunikują się ze sobą w sposób jasno zdefiniowany. Dodatkowo aplikacja wykorzystuje podejście mikroserwisowe. Każdy moduł – jak API budżetowe czy interfejs graficzny – jest osobnym serwisem połączonym przez API Gateway.
+            </p>            
+        </div>
+        <div class="techstack">
+            <h3>Wykorzystane narzędzia i technologie</h3>
+            <div class="tech-icons">
+              <img src="assets/icons/dotnetcore.png" alt=".NET Core" />
+              <img src="assets/icons/restapi.png" alt="REST API" />
+              <img src="assets/icons/keycloak.png" alt="Keycloak" />
+              <img src="assets/icons/git.png" alt="Git" />
+              <img src="assets/icons/github.png" alt="GitHub" />
+              <img src="assets/icons/docker.png" alt="Docker" />
+              <img src="assets/icons/mssql.png" alt="MS SQL" />
+              <img src="assets/icons/postman.png" alt="Postman" />
+              <img src="assets/icons/html5.png" alt="HTML5" />
+              <img src="assets/icons/css3.png" alt="CSS3" />
+              <img src="assets/icons/csharp.png" alt="C#" />
+              <img src="assets/icons/cpp.png" alt="C++" />
+              <img src="assets/icons/windows.png" alt="Windows" />
+            </div>
+        </div>
+    </div>
+    <div class="master">
+        <div class="title">
+            <h3>Praca magisterska</h3>
+        </div>
+        <div class="content">
+            <p>
+                Tematem mojej pracy magisterskiej była aplikacja e-commerce oparta na architekturze mikroserwisów. System składał się z niezależnych modułów odpowiadających za zarządzanie magazynem, klientami oraz zamówieniami. Całość połączona była poprzez API Gateway i wyposażona w graficzny interfejs użytkownika. Kluczową częścią projektu była rozbudowana sekcja testów – obejmująca testy jednostkowe, funkcjonalne, integracyjne, wydajnościowe, testy akceptacyjne, testy bezpieczeństwa (SAST i DAST), a także weryfikację obrazów kontenerów pod kątem luk. Projekt miał na celu nie tylko stworzenie kompletnego systemu, ale także udowodnienie znaczenia jakości oprogramowania poprzez wszechstronne testowanie.
+                </p>
+                
+        </div>
+    </div>
+    <div class="engineering">
+        <div class="title">
+            <h3>Praca inżynierska</h3>
+        </div>
+        <div class="content">
 
+        </div>
+    </div>
 </div>

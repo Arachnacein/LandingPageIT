@@ -7,7 +7,6 @@
     padding: 2rem;
     
     .content {
-    
         .header {
             text-align: center;
             margin-bottom: 2rem;
@@ -24,7 +23,6 @@
 
         .eastsoft > .eastsoftcontent {
             margin-top: 10%;           
-
             .logo {
                 text-align: center;
                 .imgeeastsoft {
@@ -36,7 +34,6 @@
 
         .tygodnik > .tygodnikcontent {
             margin-top: 10%;           
-
             .logo {     
                 text-align: center;
                 .imagetygodnik {
@@ -44,14 +41,10 @@
                     max-height: 500px;
                 }
             }
-            .text {
-
-            }
         }
 
         .tutoring > .tutoringcontent {
             margin-top: 10%;           
-
         }
 
         .hospital > .hospitalcontent {
@@ -61,10 +54,6 @@
                     max-width: 500px;
                     max-height: 500px;
                 }
-            }
-
-            .text {
-
             }
         }
     }
