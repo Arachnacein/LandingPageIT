@@ -4,7 +4,12 @@
     gap: 2rem;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: #1e1e1e9f;
+    background: linear-gradient(
+      120deg,
+      rgba(58, 57, 14, 0.3),
+      #1e1e1e99
+    );
+    
     box-shadow: 0 0 25px rgba(255, 217, 0, 0.3);
     animation: floatingShadow 3s ease-in-out infinite;
     height: 27rem;

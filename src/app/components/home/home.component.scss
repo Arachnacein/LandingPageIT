@@ -70,7 +70,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 3rem auto;
+      margin: 2rem auto;
 
       .contact-icons {
         display: flex;
@@ -90,6 +90,15 @@
           cursor: pointer;
           transition: transform 0.3s ease-in-out;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          animation: fadeInIcon 0.6s ease-out forwards;
+          opacity: 0;
+
+          &:nth-child(1) { animation-delay: 0.1s; }
+          &:nth-child(2) { animation-delay: 0.25s; }
+          &:nth-child(3) { animation-delay: 0.4s; }
+          &:nth-child(4) { animation-delay: 0.55s; }
+          &:nth-child(5) { animation-delay: 0.7s; }
+          &:nth-child(6) { animation-delay: 0.85s; }
 
           img {
             width: 40px;
@@ -99,7 +108,7 @@
           }
 
           &:hover {
-            transform: scale(1.1);
+            transform: scale(1.2) !important;
             box-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
           }
         }
@@ -223,6 +232,16 @@
   0% {
     opacity: 0;
     transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
   }
   100% {
     opacity: 1;

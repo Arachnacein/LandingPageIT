@@ -7,11 +7,12 @@ import { StudiesComponent } from './components/studies/studies.component';
 import { WorkComponent } from './components/work/work.component';
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { EmailComponent } from './components/email/email.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @Component({
   selector: 'app-root',
   imports: [NavbarComponent, HomeComponent, VideoComponent, TechstackComponent, 
-    StudiesComponent, WorkComponent, ProjectsComponent, EmailComponent],
+    StudiesComponent, WorkComponent, ProjectsComponent, EmailComponent, SliderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

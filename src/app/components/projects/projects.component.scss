@@ -38,6 +38,9 @@
   }
 
   .app {
+    .title {
+      text-align: center;
+    }
     .tech-icons {
       display: flex;
       flex-wrap: wrap;
@@ -71,41 +74,144 @@
         text-indent: 2em;
       }
     }
+  }
+  .engineering, .master > .title {
+    text-align: center;
+  }
 
-    .techstack {
-      text-align: center;
-
+  .engineering,
+  .master 
+  { 
+    margin-top: 12%;
+    .content {    
+      p {
+        line-height: 1.6;
+        font-size: 1.3em;
+        padding: 2%;
+        text-align: justify;
+        color: #e0e0e0;
+        text-indent: 2em;
+      }
+   }
+ }
+  .iconsbar {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
+    .icon-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #1c1c1c, #2b2b2b);
+      border: 2px solid goldenrod;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+      img {
+        width: 40px;
+        height: 40px;
+        filter: invert(85%) brightness(0.9) contrast(0.9);
+      }
+    
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
+      }
+    }
+    
+  }
+  h3 {
+    font-size: 2rem;
+    padding: 1%;
+    text-align: center;
+    color: goldenrod;
+    text-shadow: 0 0 6px rgba(218, 165, 32, 0.2);
+    margin-top: 5%;
+  }
+  .highlight {
+    color: goldenrod;
+    font-weight: bold;
+  }
+  u {
+      text-decoration: underline;
+      text-decoration-color: goldenrod;
+      text-underline-offset: 8px;
+  }
+ 
+  .techstack {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  
+    .icon-wrapper {
+      position: relative;
+      display: inline-block;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 16px;
+        background: radial-gradient(ellipse at left, goldenrod 0%, goldenrod 100%);
+        opacity: 0.3;
+        filter: blur(13px);
+        pointer-events: none;
+        z-index: 0;
+      }
+  
       img {
         height: 82px;
         padding: 5px;
         margin: 10px;
         filter: brightness(0.9) contrast(1.2);
         transition: transform 0.3s ease;
-
+        position: relative;
+        z-index: 1;
+  
         &:hover {
-          transform: scale(1.15);
+          transform: scale(1.8);
           filter: brightness(1.2);
         }
       }
     }
   }
+  
+  .mainh3 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
 
-  .engineering,
-  .master {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        goldenrod 70%,
+        transparent 100%
+      );
+      filter: blur(1px);
+      pointer-events: none;
+    }
   }
-
-  h3 {
-    line-height: 1.6;
-    font-size: 2rem;
-    padding: 2%;
-    text-align: center;
-    color: goldenrod;
-    text-shadow: 0 0 6px rgba(218, 165, 32, 0.2);
-  }
-
-  .highlight {
-    color: goldenrod;
-    font-weight: bold;
+  .clearhref {
+    color: rgba(218, 165, 32, 0.61);
+    cursor: pointer;
   }
 }
 

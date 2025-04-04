@@ -4,7 +4,7 @@
     </div>
     <div class="app">
         <div class="title">
-            <h3>Aplikacja do zarządzania budżetem domowym</h3>
+            <h3 class="mainh3">Aplikacja do zarządzania budżetem domowym</h3>
         </div>
         <div class="shortdesc">
             <p>
@@ -12,13 +12,14 @@
                 lepszegozarządzania finansami. Początkowo prowadziłem zapiski ręcznie, później przeniosłem się do Excela, ale szybko uznałem, że nie spełnia on moich oczekiwań. Chciałem czegoś bardziej przejrzystego, intuicyjnego i skrojonego pod moje potrzeby — dlatego postanowiłem stworzyć własną aplikację, która automatyzuje obliczenia i kategoryzuje wydatki według moich zasad.
             </p>
         </div>
-        <div class="carousel">
-            <app-carousel [slides]="projekty" [interval]="5000"></app-carousel>
+        <div class="carousel" id="appCarouselPointer">
+            <app-carousel [slides]="app" [interval]="5000" #appCarouselPointer></app-carousel>
         </div>
         <div class="fulldesc">
             <h3>Jak to działa?</h3>
             <p>
-            W zakładce Budżet możesz śledzić swoje miesięczne wydatki. Najlepiej zacząć od dodania przychodu – może to być wypłata, wygrana czy nawet znalezione pieniądze. Przy pierwszym przychodzie w danym miesiącu system zaproponuje wybór schematu podziału dochodu – możesz wybrać gotowy lub stworzyć własny. Aplikacja automatycznie rozdzieli środki między kategorie i zaktualizuje dane w tabelach. Możesz następnie dodawać transakcje ręcznie, a w razie potrzeby przeciągnąć je między kategoriami. Po najechaniu kursorem zobaczysz datę i opis, a kliknięcie pozwoli edytować lub usunąć transakcję.
+            W zakładce Budżet <a href="#" class="clearhref" (click)="scrollToSlide(appCarouselPointer, 0, $event)">( slajd 1 )</a>
+            możesz śledzić swoje miesięczne wydatki. Najlepiej zacząć od dodania przychodu – może to być wypłata, wygrana czy nawet znalezione pieniądze. Przy pierwszym przychodzie w danym miesiącu system zaproponuje wybór schematu podziału dochodu – możesz wybrać gotowy lub stworzyć własny. Aplikacja automatycznie rozdzieli środki między kategorie i zaktualizuje dane w tabelach. Możesz następnie dodawać transakcje ręcznie, a w razie potrzeby przeciągnąć je między kategoriami. Po najechaniu kursorem zobaczysz datę i opis, a kliknięcie pozwoli edytować lub usunąć transakcję.
             </p>
             <p>
             Dodatkowo aplikacja obsługuje transakcje cykliczne – przychody lub wydatki, które powtarzają się automatycznie. Można ustalić zakres dat i częstotliwość. Niezatwierdzone transakcje mają biały obrys i nie są liczone w statystykach, natomiast zatwierdzone zmieniają obrys na zielony i są wliczane do podsumowań.
@@ -26,39 +27,240 @@
             <h3>Architektura aplikacji</h3>
             <p>
             Projekt oparty jest o Clean Architecture, która oddziela logikę biznesową od warstwy danych i interfejsu użytkownika. Całość podzielona jest na warstwy, które komunikują się ze sobą w sposób jasno zdefiniowany. Dodatkowo aplikacja wykorzystuje podejście mikroserwisowe. Każdy moduł – jak API budżetowe czy interfejs graficzny – jest osobnym serwisem połączonym przez API Gateway.
-            </p>            
+            </p>  
+            <div class="iconsbar">
+                <p>Jeśli jesteś ciekawy/ciekawa kodu, zajrzyj na gita tutaj -></p>
+                <div class="icon-circle" onclick="window.open('https://github.com/Arachnacein/App', '_blank')">
+                    <img src="assets/home/github.png" alt="GitHub">
+                </div>
+            </div>          
         </div>
         <div class="techstack">
-              <img src="https://user-images.githubusercontent.com/25181517/192107858-fe19f043-c502-4009-8c47-476fc89718ad.png" alt="REST" title="REST"/>
-              <img src="https://github.com/user-attachments/assets/d58f38d7-ec29-4343-b06d-81d21668c758" alt="Keycloak" title="Keycloak" />
-              <img src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/>
-              <img src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png" alt="Docker" title="Docker"/>
-              <img src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/>
-              <img src="https://github.com/marwin1991/profile-technology-icons/assets/19180175/3b371807-db7c-45b4-8720-c0cfc901680a" alt="MSSQL" title="MSSQL"/>
-              <img src="https://user-images.githubusercontent.com/25181517/192109061-e138ca71-337c-4019-8d42-4792fdaa7128.png" alt="Postman" title="Postman"/>
-              <img src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/>
-              <img src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS"/>
-              <img src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png" alt="C#" title="C#"/>
-              <img src="https://user-images.githubusercontent.com/25181517/186884150-05e9ff6d-340e-4802-9533-2c3f02363ee3.png" alt="Windows" title="Windows"/>
-        </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/net.png" alt=".NET" title=".NET"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/vs.png" alt="Visual Studio" title="Visual Studio"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/csharp.png" alt="C#" title="C#"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/restapi.png" alt="REST" title="REST"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/blazor.png" alt="Blazor" title="Blazor"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/keycloak.png" alt="Keycloak" title="Keycloak" />
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/git.png" alt="Git" title="Git"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/docker.png" alt="Docker" title="Docker"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/github.png" alt="GitHub" title="GitHub"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/sql.png" alt="MSSQL" title="MSSQL"/>
+            </div>            
+            <div class="icon-wrapper">
+                <img src="assets/projects/mysql.png" alt="MySQL" title="MySQL"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/postman.png" alt="Postman" title="Postman"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/html.png" alt="HTML" title="HTML"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/css.png" alt="CSS" title="CSS"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/cqrs.png" alt="CQRS" title="CQRS"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/wsl2.png" alt="WSL2" title="WSL2"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/xunit.png" alt="xUnit" title="xUnit"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/microservices.png" alt="microservices" title="microservices"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/windows.png" alt="Windows" title="Windows"/>
+            </div>
+          </div>   
     </div>
     <div class="master">
         <div class="title">
-            <h3>Praca magisterska</h3>
+            <h3 class="mainh3">Praca magisterska</h3>
         </div>
         <div class="content">
             <p>
-                Tematem mojej pracy magisterskiej była aplikacja e-commerce oparta na architekturze mikroserwisów. System składał się z niezależnych modułów odpowiadających za zarządzanie magazynem, klientami oraz zamówieniami. Całość połączona była poprzez API Gateway i wyposażona w graficzny interfejs użytkownika. Kluczową częścią projektu była rozbudowana sekcja testów – obejmująca testy jednostkowe, funkcjonalne, integracyjne, wydajnościowe, testy akceptacyjne, testy bezpieczeństwa (SAST i DAST), a także weryfikację obrazów kontenerów pod kątem luk. Projekt miał na celu nie tylko stworzenie kompletnego systemu, ale także udowodnienie znaczenia jakości oprogramowania poprzez wszechstronne testowanie.
-                </p>
-                
+                Tematem mojej pracy magisterskiej było przeprowadzenie różnych testów aplikacji.
+                Najpierw musiałem napisać aplikację e-commerce opartą na architekturze mikroserwisów, składającą 
+                się z niezależnych modułów odpowiadających za zarządzanie magazynem, klientami 
+                oraz zamówieniami. Całość połączona była przez API Gateway i wyposażona w graficzny interfejs
+                użytkownika.
+            </p>
+            <p>
+                Kluczową częścią projektu była rozbudowana sekcja testów, obejmująca 
+                <u>testy jednostkowe</u>, <u>funkcjonalne</u>, <u>integracyjne</u>, <u>wydajnościowe</u>, 
+                <u>testy akceptacyjne</u>, <u>testy bezpieczeństwa</u> (<u>SAST</u> i <u>DAST</u>), a także 
+                <u>testy bezpieczeństwa obrazów kontenerów</u>. 
+                Projekt miał na celu nie tylko stworzenie kompletnego systemu, ale także udowodnienie 
+                znaczenia jakości oprogramowania poprzez wszechstronne testowanie.
+              </p>
+              
+        </div>
+        <div class="carousel">
+            <app-carousel [slides]="master" [interval]="5000"></app-carousel>
+        </div>
+        <div class="techstack">
+            <div class="icon-wrapper">
+                <img src="assets/projects/net.png" alt=".NET" title=".NET"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/csharp.png" alt="C#" title="C#"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/vs.png" alt="Visual Studio" title="Visual Studio"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/restapi.png" alt="REST" title="REST"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/blazor.png" alt="Blazor" title="Blazor"/>
+            </div>
+              <div class="icon-wrapper">
+                <img src="assets/projects/git.png" alt="Git" title="Git"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/docker.png" alt="Docker" title="Docker"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/wsl2.png" alt="WSL2" title="WSL2"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/github.png" alt="GitHub" title="GitHub"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/sql.png" alt="MSSQL" title="MSSQL"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/mysql.png" alt="MySQL" title="MySQL"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/postman.png" alt="Postman" title="Postman"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/html.png" alt="HTML" title="HTML"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/css.png" alt="CSS" title="CSS"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/nunit.png" alt="NUnit" title="NUnit"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/xunit.png" alt="xUnit" title="xUnit"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/katalon.png" alt="Katalon" title="Katalon"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/specflow.png" alt="SpecFlow" title="SpecFlow"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/trivy.png" alt="Trivy" title="Trivy"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/microservices.png" alt="microservices" title="microservices"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/githubactions.png" alt="GitHub Actions" title="GitHub Actions"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/windows.png" alt="Windows" title="Windows"/>
+            </div>
+        </div>
+        <div class="iconsbar">
+            <div class="icon-circle" onclick="window.open('https://github.com/Arachnacein/Shop', '_blank')">
+                <img src="assets/home/github.png" alt="GitHub">
+            </div>
+            <div class="icon-circle" onclick="window.open('https://drive.google.com/file/d/1kGHzMemIvcGopTz30YGTAbAIT0rTxetj/view?usp=sharing', '_blank')">
+                <img src="assets/projects/thesis.png" alt="Praca magisterska">
+            </div>
         </div>
     </div>
     <div class="engineering">
         <div class="title">
-            <h3>Praca inżynierska</h3>
+            <h3 class="mainh3">Praca inżynierska</h3>
         </div>
         <div class="content">
-
+            <p>
+                Tematem mojej pracy inżynierskiej było utowrzenie systemu wspomagającego 
+                    planowanie dyżurów medycznych w Szpitalnym Oddziale Ratunkowym w Siedlcach. 
+                    Stworzyłem kompleksowe rozwiązanie obejmujące REST API w technologii <span class="highlight">.NET Core</span>, 
+                    aplikację mobilną napisaną w <span class="highlight">Kotlinie</span> oraz bazę danych 
+                    <span class="highlight"> SQL Server</span>. 
+            </p>
+            <p>
+                System umożliwia m.in. generowanie miesięcznych grafików pracy z uwzględnieniem złożonych 
+                kryteriów zatrudnienia, zamiany dyżurów, obsługę próśb pracowników oraz funkcje administracyjne.
+                Aplikacja została zaprojektowana z myślą o intuicyjnej obsłudze przez osoby 
+                nieobeznane z nowymi technologiami, a jej wdrożenie miało realnie usprawnić codzienną pracę personelu
+                szpitalnego. Projekt został wykonany zgodnie z zasadami inżynierii oprogramowania oraz standardów RODO.
+                
+            </p>
+            <p><span class="highlight">Moja aplikacja pozwoliła na skrócenie czasu układania grafiku z kilku dni do kilku sekund!!</span></p>
+        </div>
+        <div class="techstack">
+            <div class="icon-wrapper">
+                <img src="assets/projects/android.png" alt="Android" title="Android"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/kotlin.png" alt="Kotlin" title="Kotlin"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/csharp.png" alt="C#" title="C#"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/netcore.png" alt=".Net Core" title=".Net Core"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/restapi.png" alt="REST" title="REST"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/sql.png" alt="MSSQL" title="MSSQL"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/mysql.png" alt="MySQL" title="MySQL"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/swagger.png" alt="Swagger" title="Swagger"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/vs.png" alt="Visual Studio" title="Visual Studio"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/androidstudio.png" alt="Android Studio" title="Android Studio"/>
+            </div>
+            <div class="icon-wrapper">
+                <img src="assets/projects/windows.png" alt="Windows" title="Windows"/>
+            </div>
+        </div>
+        <div class="iconsbar">
+            <div class="icon-circle" onclick="window.open('https://github.com/Arachnacein/EngineeringThesis', '_blank')">
+                <img src="assets/home/github.png" alt="GitHub">
+            </div>
+            <div class="icon-circle" onclick="window.open('https://drive.google.com/file/d/1W4taZ0QlNpvBGh18hS5vN0cqAyu73UmR/view?usp=sharing', '_blank')">
+                <img src="assets/projects/thesis.png" alt="Praca magisterska">
+            </div>
         </div>
     </div>
 </div>
