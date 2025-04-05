@@ -3,11 +3,15 @@
       <div
         *ngFor="let image of carouselImages; let i = index"
         class="carousel-item"
-        [class.center]="i === currentIndex"
-        [class.left]="i === leftIndex"
-        [class.right]="i === rightIndex"
-        [class.hidden]="i !== currentIndex && i !== leftIndex && i !== rightIndex"
-        [class.blurred]="image.isBlurred"
+        [ngClass]="{
+          'center': i === currentIndex,
+          'left': i === leftIndex,
+          'right': i === rightIndex,
+          'hidden': i !== currentIndex && i !== leftIndex && i !== rightIndex,
+          'blurred': image.isBlurred,
+          'landscape': image.orientation === 'landscape',
+          'portrait': image.orientation === 'portrait'
+        }"
         [style.backgroundImage]="'url(' + image.url + ')'"
         (click)="onImageClick(i)">
       </div>

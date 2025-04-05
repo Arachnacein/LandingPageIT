@@ -17,28 +17,41 @@
   
   .carousel-item {
     position: absolute;
-    width: 250px;
-    height: 350px;
+    top: 50%;
+    left: 50%;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    top: 25px;
-    left: calc(50% - 125px);
+    transform: translate(-50%, -50%);
     transition: transform 0.5s ease, filter 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+  }
+  
+  .carousel-item.landscape {
+    width: 300px;
+    height: 250px;
+  }
+  
+  .carousel-item.portrait {
+    width: 250px;
+    height: 350px;
   }
   
   .center {
-    transform: translateX(0) translateZ(100px);
+    transform: translate(-50%, -50%) translateZ(100px);
     z-index: 2;
   }
   
   .left {
-    transform: translateX(-150px) translateZ(-50px) rotateY(20deg);
+    transform: translate(-50%, -50%) translateX(-250px) translateZ(-70px) rotateY(20deg);
     z-index: 1;
   }
   
   .right {
-    transform: translateX(150px) translateZ(-50px) rotateY(-20deg);
+    transform: translate(-50%, -50%) translateX(250px) translateZ(-70px) rotateY(-20deg);
     z-index: 1;
   }
   
@@ -48,6 +61,6 @@
   }
   
   .blurred {
-    filter: blur(5px);
+    filter: blur(15px);
   }
   

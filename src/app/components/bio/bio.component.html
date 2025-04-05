@@ -14,7 +14,17 @@
                 Ryk silnika, wiatr i piękne widoki – to mój reset. Fizyczny i mentalny.
             </p>
             <div class="imagescontainer">
-                
+                <app-mini-carousel
+                [images]="[
+                  'assets/bio/moto3.png',
+                  'assets/bio/moto1.png',
+                  'assets/bio/moto2.png',
+                  'assets/bio/moto4.png',
+                  'assets/bio/moto5.png',
+                ]"
+                [blurred]="false"
+              >
+            </app-mini-carousel>
             </div>
         </div>
         <div class="hobbycontainer">
@@ -37,7 +47,15 @@
                  mikrokosmos, który cały czas zaskakuje.
             </p>
             <div class="imagescontainer">
-                
+                <app-mini-carousel
+                [images]="[
+                  'assets/bio/terra2.png',
+                  'assets/bio/terra1.png',
+                  'assets/bio/terra3.png',
+                ]"
+                [blurred]="true"
+              >
+            </app-mini-carousel>
             </div>
         </div>
         <div class="hobbycontainer">
@@ -50,19 +68,17 @@
                 Przez te wszystkie aspekty trafiłem do strzelectwa sportowego.
             </p>
             <p>
-                <i>"Każdy oddany strzał to nie przypadek. To rytuał."</i> - Ja 2024
+                <i>"Każdy oddany strzał to nie przypadek. To rytuał."</i> - Ja, 2024.
             </p>
             <div class="imagescontainer">
                 <app-mini-carousel
                 [images]="[
                   'assets/bio/gun1.png',
-                  'assets/bio/gun2.png',
-                  'assets/bio/gun2.png',
-                  'assets/bio/morsy1.png',
+                  'assets/bio/gun2.png'
                 ]"
                 [blurred]="false"
-              ></app-mini-carousel>
-              
+              >
+            </app-mini-carousel>
             </div>
         </div>
         <div class="hobbycontainer">
@@ -72,7 +88,15 @@
                 Zimna woda pobudza, dyscyplinuje i hartuje. To wciąga.
             </p>
             <div class="imagescontainer">
-                
+                <app-mini-carousel
+                [images]="[
+                  'assets/bio/morsy1.png',
+                  'assets/bio/morsy2.png',
+                  'assets/bio/morsy3.png',
+                ]"
+                [blurred]="false"
+              >
+            </app-mini-carousel>
             </div>
         </div>
     </div>  

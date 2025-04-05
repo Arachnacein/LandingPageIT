@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 interface CarouselImage {
   url: string;
   isBlurred: boolean;
+  orientation: 'landscape' | 'portrait';
 }
 
 @Component({
   selector: 'app-mini-carousel',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './mini-carousel.component.html',
   styleUrls: ['./mini-carousel.component.scss']
@@ -21,11 +21,19 @@ export class MiniCarouselComponent implements OnInit {
   currentIndex = 0;
 
   ngOnInit(): void {
-    // Przekształcamy listę URL-i na obiekty z początkowym stanem blur
     this.carouselImages = this.images.map(url => ({
       url,
-      isBlurred: this.blurred
+      isBlurred: this.blurred,
+      orientation: 'portrait'
     }));
+
+    this.carouselImages.forEach(img => {
+      const image = new Image();
+      image.src = img.url;
+      image.onload = () => {
+        img.orientation = image.naturalWidth >= image.naturalHeight ? 'landscape' : 'portrait';
+      };
+    });
   }
 
   get leftIndex(): number {
@@ -38,11 +46,12 @@ export class MiniCarouselComponent implements OnInit {
 
   onImageClick(index: number): void {
     if (index === this.currentIndex) {
-      // Kliknięcie w środkowe zdjęcie – toggle blur
-      this.carouselImages[index].isBlurred = !this.carouselImages[index].isBlurred;
+      if (this.carouselImages[index].isBlurred) {
+        this.carouselImages[index].isBlurred = false;
+      }
     } else {
-      // Kliknięcie w boczne zdjęcie – obrót karuzeli
       this.currentIndex = index;
     }
   }
+  
 }
