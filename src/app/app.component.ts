@@ -8,11 +8,14 @@ import { WorkComponent } from './components/work/work.component';
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { EmailComponent } from './components/email/email.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { BioComponent } from './components/bio/bio.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   imports: [NavbarComponent, HomeComponent, VideoComponent, TechstackComponent, 
-    StudiesComponent, WorkComponent, ProjectsComponent, EmailComponent, SliderComponent],
+    StudiesComponent, WorkComponent, ProjectsComponent, EmailComponent, 
+    SliderComponent, BioComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

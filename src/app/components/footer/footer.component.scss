@@ -1,0 +1,118 @@
+.footer {
+    color: #e0e0e0;
+    padding: 40px 20px 60px;
+    font-size: 1rem;
+  
+    .footer-line {
+      border: none;
+      height: 2px;
+      width: 80%;
+      margin: 0 auto 30px auto;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(231, 172, 21, 0.815) 0%,
+        rgba(218, 165, 32, 0.5) 40%,
+        rgba(218, 165, 32, 0.2) 70%,
+        transparent 100%
+      );
+      filter: blur(1.2px);
+      opacity: 0.8;
+    }
+  
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      justify-content: center;
+  
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        align-self: center;
+        height: 100%;
+        justify-content: center;
+        width: 45%;
+        box-sizing: border-box;
+
+        .contact-icons {
+          display: flex;
+          gap: 20px;
+          padding: 5px;
+          margin: 5px;
+  
+          .icon {
+            img {
+              width: 33px;
+              height: 33px;
+              filter: invert(85%) brightness(0.9) contrast(0.9);
+            }
+  
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.1);
+            }
+          }
+        }
+  
+        .copy {
+          padding: 5px;
+          margin: 5px;
+          margin-top: 10px;
+        }
+      }
+  
+      .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+        padding: 5px;
+        margin: 5px;
+        height: 100%;
+        width: 55%;
+        box-sizing: border-box;
+
+        .footer-avatar {
+          width: 100px;
+          object-fit: cover;
+          border-radius: 10px;
+          filter: grayscale(100%);
+          border: 2px solid goldenrod;
+        }
+  
+        .footer-details {
+          h4 {
+            color: goldenrod;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+}
+  
+@media (max-width: 850px) {
+    .footer > .footer-content {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+
+      .footer-info,
+      .contact {
+        width: 100%;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center;
+      }
+  
+      .footer-info {
+        order: -1;
+      }
+    }
+  }
