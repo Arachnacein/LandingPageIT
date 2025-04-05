@@ -36,12 +36,27 @@ export class MiniCarouselComponent implements OnInit {
     });
   }
 
-  get leftIndex(): number {
-    return (this.currentIndex - 1 + this.carouselImages.length) % this.carouselImages.length;
+  private getPosition(i: number): number {
+    const length = this.carouselImages.length;
+    return (i - this.currentIndex + length) % length;
   }
 
-  get rightIndex(): number {
-    return (this.currentIndex + 1) % this.carouselImages.length;
+  getItemClass(i: number): string {
+    const length = this.carouselImages.length;
+    const pos = this.getPosition(i);
+
+    if (pos === 0) {
+      return 'center';
+    } else if (pos === 1) {
+      return 'right';
+    } else if (pos === length - 1) {
+      return 'left';
+    } else if (pos === 2 && length > 3) {
+      return 'far-right';
+    } else if (pos === length - 2 && length > 3) {
+      return 'far-left';
+    }
+    return 'hidden';
   }
 
   onImageClick(index: number): void {
@@ -53,5 +68,4 @@ export class MiniCarouselComponent implements OnInit {
       this.currentIndex = index;
     }
   }
-  
 }

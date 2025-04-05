@@ -1,6 +1,6 @@
 <div class="bio" id="bio"> 
     <div class="header">
-        <h2>Trochę więcej o mnie (BIO)</h2>
+        <h2>Trochę więcej o moich hobby</h2>
     </div>
     <div class="content">
         <div class="hobbycontainer">
@@ -35,7 +35,13 @@
                 a każdy mecz to okazja do lepszego poznania siebie i przeciwnika.
             </p>
             <div class="imagescontainer">
-
+                <app-mini-carousel
+                [images]="[
+                  'assets/bio/tenis1.png',
+                ]"
+                [blurred]="false"
+              >
+            </app-mini-carousel>
             </div>
         </div>
         <div class="hobbycontainer">
@@ -49,9 +55,9 @@
             <div class="imagescontainer">
                 <app-mini-carousel
                 [images]="[
+                    'assets/bio/terra3.png',
                   'assets/bio/terra2.png',
                   'assets/bio/terra1.png',
-                  'assets/bio/terra3.png',
                 ]"
                 [blurred]="true"
               >
@@ -82,6 +88,31 @@
             </div>
         </div>
         <div class="hobbycontainer">
+            <h2>Ogrodnictwo</h2>
+            <p>
+                W ogrodzie odnajduję spokój i relaks – to mój zielony azyl. 
+            </p>
+            <p>
+                Przycinanie drzewek i krzewów sprawia mi satysfakcję. 
+                 To prawdziwa sztuka kształtowania natury. Każde starannie wykonane cięcie 
+                 nadaje roślinom formę na lata, wspierając ich zdrowy wzrost i 
+                 podkreślając naturalne piękno ogrodu.
+            </p>
+            <div class="imagescontainer">
+                <app-mini-carousel
+                [images]="[                  
+                    'assets/bio/garden5.png',
+                    'assets/bio/garden1.png',
+                    'assets/bio/garden2.png',                  
+                    'assets/bio/garden3.png',                  
+                    'assets/bio/garden4.png',
+                ]"
+                [blurred]="false"
+              >
+            </app-mini-carousel>
+            </div>
+        </div>
+        <div class="hobbycontainer">
             <h2>Morsowanie</h2>
             <p>
                 Kiedy większość ludzi zakłada dodatkową warstwę, ja... zdejmuję kolejną. <br>
@@ -98,6 +129,25 @@
               >
             </app-mini-carousel>
             </div>
+        </div>
+        <div class="hobbycontainer">
+            <h2>I inne</h2>
+            <p>
+                Mam też wiele innych pomniejszych pasji takich jak:
+                winiarstwo, gra w bilard, wędkarstwo, fotografia, montowanie filmów, jazda na rolkach, 
+                łucznictwo, spacery, pieczenie słodkości, układanie puzzli czy gry mobilne.
+            </p>
+            <p>
+                Zaliczę też tutaj programowanie, bo to ciągle moja pasja.
+            </p>
+            <!-- <div class="imagescontainer">
+                <app-mini-carousel
+                [images]="[
+                ]"
+                [blurred]="false"
+              >
+            </app-mini-carousel>
+            </div> -->
         </div>
     </div>  
 </div>
