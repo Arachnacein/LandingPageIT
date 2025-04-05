@@ -1,0 +1,16 @@
+<div class="carousel-container">
+    <div class="carousel">
+      <div
+        *ngFor="let image of carouselImages; let i = index"
+        class="carousel-item"
+        [class.center]="i === currentIndex"
+        [class.left]="i === leftIndex"
+        [class.right]="i === rightIndex"
+        [class.hidden]="i !== currentIndex && i !== leftIndex && i !== rightIndex"
+        [class.blurred]="image.isBlurred"
+        [style.backgroundImage]="'url(' + image.url + ')'"
+        (click)="onImageClick(i)">
+      </div>
+    </div>
+  </div>
+  
