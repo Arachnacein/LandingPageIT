@@ -41,9 +41,9 @@
   .picture {
     grid-area: picture;
     float: right;
-    margin-left: 50px;
-    margin-bottom: 50px;
-    margin-top: 33px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 2.7%;
     animation: fadeInOnStartPicture 2s ease-out;
 
     img {
@@ -215,6 +215,30 @@
       }
     }
   }
+}
+@media (max-width: 480px) {
+  .picture {
+    margin: 0 auto;
+    animation: fadeInOnStartPicture 2s ease-out;
+    order: 1;
+    img {
+      max-width: 250px;
+      max-height: 250px;
+      width: 80%;
+      height: 80%;
+      border-radius: 10px;
+      border: 3px solid goldenrod;
+      background-color: #1e1e1e;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+  }
+  .aboutme {
+    order: 2;
+  }
+  .lower {
+    order: 3;
+  }
+  
 }
 
 @keyframes fadeInOnStartUpper {
