@@ -1,12 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-email',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './email.component.html',
   styleUrls: ['./email.component.scss']
 })
@@ -15,15 +15,15 @@ export class EmailComponent {
   messageSent = false;
   isSending = false;
 
-  formData: {
-    reply_to: string;
-    subject: string;
-    message: string;
-  } = {
+  formData = {
     reply_to: '',
     subject: '',
     message: ''
   };
+
+  private formspreeEndpoint = 'https://formspree.io/f/mblgpzqg';
+
+  constructor(private http: HttpClient) {}
 
   get isFormValid(): boolean {
     return (
@@ -45,24 +45,26 @@ export class EmailComponent {
 
     this.isSending = true;
 
-    emailjs.sendForm(
-      'service_9df5s2a',
-      'template_jc6004o',
-      this.formRef.nativeElement,
-      '_fM9NjuKEXZNF00ln'
-    ).then(() => {
-      this.messageSent = true;
-      this.isSending = false;
-      this.formRef.nativeElement.reset();
-      this.formData = { reply_to: '', subject: '', message: '' };
+    const formDataPayload = new FormData();
+    formDataPayload.append('reply_to', this.formData.reply_to);
+    formDataPayload.append('subject', this.formData.subject);
+    formDataPayload.append('message', this.formData.message);
 
-      setTimeout(() => {
-        this.messageSent = false;
-      }, 4000);
+    this.http.post(this.formspreeEndpoint, formDataPayload).subscribe({
+      next: () => {
+        this.messageSent = true;
+        this.isSending = false;
+        this.formRef.nativeElement.reset();
+        this.formData = { reply_to: '', subject: '', message: '' };
 
-    }, (error) => {
-      console.error('Błąd przy wysyłaniu e-maila:', error);
-      this.isSending = false;
+        setTimeout(() => {
+          this.messageSent = false;
+        }, 4000);
+      },
+      error: (error) => {
+        console.error('Błąd przy wysyłaniu e-maila:', error);
+        this.isSending = false;
+      }
     });
   }
 }

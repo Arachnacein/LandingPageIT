@@ -1,6 +1,7 @@
 .contact-form-section {
     display: flex;
     max-width: auto;
+    position:relative;
     gap: 2rem;
     margin: 3rem auto;
     padding: 2rem;
@@ -72,11 +73,22 @@
     }
   
     .confirmation {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1rem 2rem;
+      display: block;
       text-align: center;
-      margin-top: 1rem;
-      color: lightgreen;
-      font-weight: bold;
+      margin: 1rem auto;
+      color: black; 
+      border: 1px solid lightgreen;
+      border-radius: 4px;
+      max-width: 600px;
+      z-index: 10;
+      background-color: lightgreen;
     }
+    
 
     input.invalid,
     textarea.invalid {
