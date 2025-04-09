@@ -117,7 +117,7 @@
           img {
             width: 40px;
             height: 40px;
-            filter: invert(85%) brightness(0.9) contrast(0.9);
+            filter: invert(100%) brightness(0.9);
           }
 
           &:hover {
@@ -130,6 +130,8 @@
             img {
               width: 30px;
               height: 30px;
+              filter: invert (100%) brightness(0.9);
+
             }
           }
         }

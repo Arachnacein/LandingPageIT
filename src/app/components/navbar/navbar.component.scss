@@ -2,150 +2,71 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
   background: linear-gradient(to bottom, rgba(18, 18, 18, 0.95), rgba(10, 10, 10, 0.85));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
   z-index: 99;
   backdrop-filter: blur(6px);
+  padding: 0.2rem 0 0 0;
+}
 
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: goldenrod;
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
   .nav-links {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "techstack school work projects"
+      "start start bio bio";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0.4rem;
+    padding: 0.5rem;
 
     li {
-      flex: 1;
-      text-align: center;
-
-      a,
-      p {
-        text-decoration: none;
-        color: #e0e0e0;
-        font-size: 1.1rem;
-        font-weight: 500;
-        transition: color 0.3s ease, text-shadow 0.3s ease;
-
-        &:hover {
-          color: goldenrod;
-          text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
-        }
-      }
-
-      &.dropdown {
-        position: relative;
-
-        .dropdown-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-          background-color: #1e1e1e;
-          padding: 0.8rem 0.5rem;
-          list-style: none;
-          border-radius: 8px;
-          min-width: 120px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-          z-index: 1000;
-
-          li {
-            button {
-              background: none;
-              border: none;
-              color: #e0e0e0;
-              padding: 0.5rem 1rem;
-              width: 100%;
-              text-align: center;
-              cursor: pointer;
-              font-size: 1rem;
-              transition: background 0.3s, color 0.3s;
-
-              &:hover {
-                background-color: #2d2d2d;
-                color: goldenrod;
-              }
-            }
-          }
-        }
-
-        &:hover .dropdown-menu {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-@media(max-width: 600px) {
-  .navbar {
-    height: 54px;
-    .nav-links {
-      li {
-        a,
-        p {
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
-}
-
-@media(max-width: 480px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 48px;
-    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.95), rgba(10, 10, 10, 0.85));
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    z-index: 99;
-    backdrop-filter: blur(6px);
-  
-    .nav-links {
       display: flex;
-      flex: 1;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      width: 100%;
-  
-      li {
-        flex: 1;
-        text-align: center;
-  
-        a,
-        p {
-          text-decoration: none;
-          color: #e0e0e0;
-          font-size: 0.8rem;
-          font-weight: 500;
-          transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
+
+      a {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.6rem;
+        border-radius: 12px;
       }
     }
-  }
-}
-@media(max-width: 430px) {
-  .navbar {
-    height: 50px;
-    .nav-links {
-      li {
-        a,
-        p {
-          font-size: 0.7rem;
-        }
-      }
+
+    .left {
+      grid-area: start;
     }
+
+    .right {
+      grid-area: bio;
+    }
+
+    .center:nth-child(2) { grid-area: techstack; }
+    .center:nth-child(3) { grid-area: school; }
+    .center:nth-child(4) { grid-area: work; }
+    .center:nth-child(5) { grid-area: projects; }
   }
 }
