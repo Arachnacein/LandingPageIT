@@ -148,3 +148,38 @@
   75% { opacity: 0.79; }
   100% { opacity: 1; }
 }
+
+@media (max-width: 768px) {
+  .techstack {
+    padding: 1rem;
+
+    .header h2 {
+      font-size: 2.5rem;
+    }
+
+    .skills {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      .languages,
+      .frameworks,
+      .tools,
+      .databases,
+      .cloud,
+      .tests,
+      .patterns,
+      .cicd,
+      .ai,
+      .other {
+        padding: 0.8rem;
+        
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
