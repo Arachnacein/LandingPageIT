@@ -51,7 +51,6 @@
     .hospital > .hospitalcontent {
         margin-top: 4%;
         max-width: 1500px;
-        margin: auto;
         margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
@@ -170,4 +169,53 @@
   70% { opacity: 0.3; }
   75% { opacity: 0.79; }
   100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .work {
+    padding: 1.5rem 1rem;
+
+    .content {
+      .header {
+        margin-bottom: 2rem;
+
+        h2 {
+          font-size: 1.7rem;
+          padding-bottom: 0.4rem;
+        }
+
+        h3 {
+          font-size: 1.6rem;
+          margin-bottom: 0;
+        }
+      }
+
+      .eastsoft > .eastsoftcontent,
+      .tygodnik > .tygodnikcontent,
+      .tutoring > .tutoringcontent,
+      .hospital > .hospitalcontent {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+        transform: none !important;
+        transition: none !important;
+        
+        .logo > img {
+          width: 90%;
+          max-height: 50%;
+          padding: 0.5rem;
+        }
+      }
+    }
+
+    .text {
+      p, ul {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        line-height: 1.6;
+        text-indent: 1.5em;
+      }
+    }
+  }
 }

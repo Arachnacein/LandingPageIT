@@ -27,11 +27,21 @@
       }
     }
   }
+
   @keyframes scrollText {
-    0% {
-      transform: translateX(0%);
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-50%);}
+  }
+
+  @media(max-width: 768px) {
+    .tech-slider {
+      height: 35px;
+      margin-top: 2vh;
     }
-    100% {
-      transform: translateX(-50%);
+    .tech-slider-track {
+      span {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+      }
     }
   }

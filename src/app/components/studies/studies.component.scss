@@ -1,7 +1,7 @@
 .studies {
   max-width: 1500px;
-  margin: 30px;
   margin-top: 40px;
+  margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -92,45 +92,24 @@
 }
 
 @keyframes pulsar {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0.4;
-  }
-  25% {
-    opacity: 0.79;
-  }
-  30% {
-    opacity: 0.4;
-  }
-  35% {
-    opacity: 0.88;
-  }
-  55% {
-    opacity: 0.2;
-  }
-  60% {
-    opacity: 0.9;
-  }
-  70% {
-    opacity: 0.3;
-  }
-  75% {
-    opacity: 0.79;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% {opacity: 1;}
+  20% {opacity: 0.4;}
+  25% {opacity: 0.79;}
+  30% {opacity: 0.4;}
+  35% {opacity: 0.88;}
+  55% {opacity: 0.2;}
+  60% {opacity: 0.9;}
+  70% {opacity: 0.3;}
+  75% {opacity: 0.79;}
+  100% {opacity: 1;}
 }
 
 @media (max-width: 768px) {
   .studies {
     transform: none !important;
     transition: none !important;
-    padding: 2rem 2.5rem;
+    padding: 2rem 2rem;
     border-radius: 20px;
-    margin: 20px;
 
     &.reveal {
       transform: none;
@@ -140,7 +119,7 @@
       margin-bottom: 1.5rem;
 
       h2 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         padding-bottom: 0.4rem;
 
         &::after {
@@ -158,9 +137,9 @@
     .content {
       p {
         font-size: 1rem;
-        line-height: 1.5;
+        line-height: 1.6;
         padding: 0.5rem 0;
-        text-indent: 1.5em;
+        text-indent: 1.5rem;
       }
     }
   }
