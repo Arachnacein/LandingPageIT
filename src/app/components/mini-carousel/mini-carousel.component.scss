@@ -31,12 +31,12 @@
 }
 
 .carousel-item.landscape {
-  width: 25%;
-  aspect-ratio: 4 / 3; 
+  width: 31%;
+  aspect-ratio: 4 / 4; 
 }
 
 .carousel-item.portrait {
-  width: 25%;
+  width: 31%;
   aspect-ratio: 2 / 3;
 }
 
@@ -46,23 +46,23 @@
 }
 
 .left {
-  transform: translate(-50%, -50%) translateX(-99%) translateZ(-70px) rotateY(20deg);
+  transform: translate(-50%, -50%) translateX(-70%) translateZ(-70px) rotateY(20deg);
   z-index: 2;
 }
 
 .right {
-  transform: translate(-50%, -50%) translateX(99%) translateZ(-70px) rotateY(-20deg);
+  transform: translate(-50%, -50%) translateX(70%) translateZ(-70px) rotateY(-20deg);
   z-index: 2;
 }
 
 .far-left {
-  transform: translate(-50%, -50%) translateX(-150%) translateZ(-100px) rotateY(30deg);
+  transform: translate(-50%, -50%) translateX(-110%) translateZ(-100px) rotateY(40deg);
   z-index: 1;
   opacity: 0.5;
 }
 
 .far-right {
-  transform: translate(-50%, -50%) translateX(150%) translateZ(-100px) rotateY(-30deg);
+  transform: translate(-50%, -50%) translateX(110%) translateZ(-100px) rotateY(-40deg);
   z-index: 1;
   opacity: 0.5;
 }

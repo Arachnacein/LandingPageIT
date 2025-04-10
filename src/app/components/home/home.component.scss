@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+#home {
+  scroll-margin-top: 50px;
+}
 .home {
   max-width: 1500px;
   padding: 20px;
@@ -130,7 +133,7 @@
             img {
               width: 30px;
               height: 30px;
-              filter: invert (100%) brightness(0.9);
+              filter: invert (1) brightness(0.9);
 
             }
           }
