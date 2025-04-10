@@ -13,7 +13,6 @@
     
     box-shadow: 0 0 25px rgba(255, 217, 0, 0.3);
     animation: floatingShadow 3s ease-in-out infinite;
-    height: 27rem;
     align-items: center;
 
     .contact-info {
@@ -27,7 +26,6 @@
         }
     
         p {
-          margin-top: 1rem;
           font-size: 1.2rem;
           color: #aaa;
         }
@@ -111,12 +109,11 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      height: 38rem;
   
       .contact-info,
       .contact-form {
         width: 100%;
-        max-width: 600px;
+        max-width: auto;
       }
     }
 }
@@ -133,3 +130,16 @@
     }
 }
   
+@media(max-width: 768px) {
+  .contact-form-section {
+    .contact-info {
+      h2 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
