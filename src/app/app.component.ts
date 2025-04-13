@@ -10,12 +10,13 @@ import { EmailComponent } from './components/email/email.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { BioComponent } from './components/bio/bio.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { KnowledgeComponent } from './components/knowledge/knowledge.component';
 
 @Component({
   selector: 'app-root',
   imports: [NavbarComponent, HomeComponent, VideoComponent, TechstackComponent, 
     StudiesComponent, WorkComponent, ProjectsComponent, EmailComponent, 
-    SliderComponent, BioComponent, FooterComponent],
+    SliderComponent, BioComponent, FooterComponent, KnowledgeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

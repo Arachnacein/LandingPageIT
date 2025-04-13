@@ -1,0 +1,133 @@
+  .highlight {
+    color: goldenrod;
+    font-weight: bold;
+  }
+  a  {
+    color: goldenrod;
+
+  }
+  .knowledge {
+    max-width: 1500px;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 3%;
+    flex-wrap: wrap;
+  }
+  
+  .knowledge .header {
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  
+  .knowledge .header h2 {
+    font-size: 3.5rem;
+    color: goldenrod;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  .knowledge .sectioncontent {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem;
+    border-radius: 30px;
+  }
+  
+  .knowledge .sectioncontent .text {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.3em;
+    color: #e0e0e0;
+  }
+  
+  .knowledge .sectioncontent .text h3 {
+    text-align: center;
+    color: goldenrod;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .sectioncontent {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    padding: 3rem 2rem;
+    border-radius: 38px; 
+  }
+  
+
+  .sectioncontent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px; 
+    height: 150px;
+    border-top: 4px solid goldenrod;
+    border-left: 4px solid goldenrod;
+    border-top-left-radius: 38px; 
+    filter: blur(30px);
+    
+  }
+
+  .sectioncontent::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px; 
+    height: 150px;
+    border-bottom: 4px solid goldenrod;
+    border-right: 4px solid goldenrod;
+    border-bottom-right-radius: 38px;
+    filter: blur(30px);
+  }
+  @media (max-width: 1050px) {
+    .knowledge .sectioncontent {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+  
+  @keyframes pulsar {
+    0% { opacity: 1; }
+    20% { opacity: 0.4; }
+    25% { opacity: 0.79; }
+    30% { opacity: 0.4; }
+    35% { opacity: 0.88; }
+    55% { opacity: 0.2; }
+    60% { opacity: 0.9; }
+    70% { opacity: 0.3; }
+    75% { opacity: 0.79; }
+    100% { opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .knowledge {
+      padding: 1.5rem 1rem;
+    }
+    .knowledge .header h2 {
+      font-size: 1.7rem;
+      padding-bottom: 0.4rem;
+    }
+    .knowledge .sectioncontent {
+      flex-direction: column;
+      padding: 1.5rem 1rem;
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+    .knowledge .sectioncontent .text {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      text-indent: 1.5em;
+    }
+  }
+  
